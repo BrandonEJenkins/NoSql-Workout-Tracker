@@ -1,0 +1,19 @@
+{
+  "name": "nosql-workout-tracker",
+  "version": "1.0.0",
+  "description": "NoSql fitness tracker that allows user to view, create, and track daily workouts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonEJenkins/NoSql-Workout-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonEJenkins/NoSql-Workout-Tracker/issues"
+  },
+  "homepage": "https://github.com/BrandonEJenkins/NoSql-Workout-Tracker#readme"
+}
