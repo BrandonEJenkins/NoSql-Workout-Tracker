@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 
@@ -10,10 +11,17 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
-    useNewUrlParser: true,
-    useFindAndModify: false
-});
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
+//     useNewUrlParser: true,
+//     useFindAndModify: false,
+//     useUnifiedTopology: true
+// });
+
+let uri = "mongodb://localhost/workoutdb";
+if (process.env.NODE_ENV === 'production') {
+    uri = process.env.MONGODB_URI;
+}
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // routes
 app.use(require('./routes/html.js'));
